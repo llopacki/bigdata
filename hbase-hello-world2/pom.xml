@@ -16,20 +16,13 @@
   -->
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.bigtable.helloworld</groupId>
-  <artifactId>cloud-bigtable-hello-world</artifactId>
+  <groupId>com.example.hbase.helloworld</groupId>
+  <artifactId>cloud-hbase-hello-world</artifactId>
 
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>cloud-bigtable-hello-world</name>
+  <name>cloud-java.com.example.hbase-hello-world</name>
   <url>http://maven.apache.org</url>
-
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>bigtable-samples</artifactId>
-    <version>1.0.0</version>
-    <relativePath>..</relativePath>
-  </parent>
 
   <properties>
     <bigtable.version>1.0.0</bigtable.version>
@@ -44,13 +37,31 @@
       <releases><enabled>false</enabled></releases>
       <snapshots><enabled>true</enabled></snapshots>
     </repository>
+    <repository>
+      <id>maven</id>
+      <url>https://mvnrepository.com/artifact/</url>
+      <releases><enabled>false</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </repository>
   </repositories>
+
 
   <dependencies>
     <dependency>
-      <groupId>com.google.cloud.bigtable</groupId>
-      <artifactId>bigtable-hbase-1.x</artifactId>
-      <version>${bigtable.version}</version>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase</artifactId>
+      <version>1.4.0</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-client</artifactId>
+      <version>1.4.0</version>
     </dependency>
   </dependencies>
 
@@ -61,7 +72,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.5.0</version>
         <configuration>
-          <mainClass>com.example.cloud.bigtable.helloworld.HelloWorld</mainClass>
+          <mainClass>com.example.hbase.helloworld.HelloWorld2</mainClass>
         </configuration>
       </plugin>
     </plugins>

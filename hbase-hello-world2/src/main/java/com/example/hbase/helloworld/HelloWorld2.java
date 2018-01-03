@@ -63,6 +63,7 @@ public class HelloWorld2 {
         config.set("java.com.example.hbase.zookeeper.property.clientPort","2181");
         config.set("hbase.client.retries.number","3");
         config.set("hbase.client.pause","1000");
+        config.set("zookeeper.znode.parent","/hbase-unsecure");
 
         // [START connecting_to_bigtable]
         // Create the Bigtable connection, use try-with-resources to make sure it gets closed

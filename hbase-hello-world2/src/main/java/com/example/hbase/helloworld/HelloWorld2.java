@@ -59,7 +59,7 @@ public class HelloWorld2 {
      */
     private static void doHelloWorld() {
         Configuration config = HBaseConfiguration.create();
-        config.set("java.com.example.hbase.zookeeper.quorum","52.234.134.115");
+        config.set("java.com.example.hbase.zookeeper.quorum","localhost");
         config.set("java.com.example.hbase.zookeeper.property.clientPort","2181");
         config.set("hbase.client.retries.number","3");
         config.set("hbase.client.pause","1000");

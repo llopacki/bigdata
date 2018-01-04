@@ -50,6 +50,8 @@ public class HelloWorld2 {
     private static final byte[] COLUMN_FAMILY_NAME2 = Bytes.toBytes("cf2");
     private static final byte[] COLUMN_NAME = Bytes.toBytes("greeting");
 
+    private static final String ZOOKEEPER_IP = "10.0.0.10";
+
     // Write some friendly greetings to Cloud Bigtable
     private static final String[] GREETINGS =
             { "Hello World!", "Hello Cloud Bigtable!", "Hello HBase!", "Hi there", "Cz!" };
@@ -58,8 +60,9 @@ public class HelloWorld2 {
      * Connects to Cloud Bigtable, runs some basic operations and prints the results.
      */
     private static void doHelloWorld() {
+	print("ZOOKEEPER IP:"+ZOOKEEPER_IP);
         Configuration config = HBaseConfiguration.create();
-        config.set("java.com.example.hbase.zookeeper.quorum","localhost");
+        config.set("java.com.example.hbase.zookeeper.quorum",ZOOKEEPER_IP);
         config.set("java.com.example.hbase.zookeeper.property.clientPort","2181");
         config.set("hbase.client.retries.number","3");
         config.set("hbase.client.pause","1000");

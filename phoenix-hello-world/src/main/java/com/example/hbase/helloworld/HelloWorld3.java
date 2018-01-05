@@ -29,7 +29,7 @@ public class HelloWorld3 {
         Class.forName("org.apache.phoenix.jdbc.PhoenixDriver");
         conn =  DriverManager.getConnection("jdbc:phoenix:10.0.0.13:/hbase-unsecure");
         System.out.println("got connection");
-        ResultSet rst = conn.createStatement().executeQuery("select * from sales");
+        ResultSet rst = conn.createStatement().executeQuery('select * from "sales"');
         while (rst.next()) {
             System.out.println(rst.getString(1) + " " + rst.getString(2));
         }

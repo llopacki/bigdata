@@ -50,7 +50,7 @@ public class HelloWorld2 {
     private static final byte[] COLUMN_FAMILY_NAME2 = Bytes.toBytes("cf2");
     private static final byte[] COLUMN_NAME = Bytes.toBytes("greeting");
 
-    private static final String ZOOKEEPER_IP = "10.0.0.10";
+    private static final String ZOOKEEPER_IP = "10.0.0.13,10.0.0.4,10.0.0.7,10.0.0.8,"; // HDInsights
 
     // Write some friendly greetings to Cloud Bigtable
     private static final String[] GREETINGS =

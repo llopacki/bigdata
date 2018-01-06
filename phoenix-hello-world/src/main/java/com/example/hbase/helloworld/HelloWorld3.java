@@ -33,7 +33,7 @@ public class HelloWorld3 {
         while (rst.next()) {
             System.out.println(rst.getString(1) + " " + rst.getString(2));
         }
-        conn.commit();
+        //conn.commit();
 
     }
 }
